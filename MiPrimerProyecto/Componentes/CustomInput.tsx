@@ -17,6 +17,10 @@ export default function CustomInput({ label, value, type, onChange, required }: 
     
     const getError = () => {
         if (required && !value) return 'Este campo es requerido';
+        /*evaluar si tiene @*/
+        if (type === 'email' && value.includes('@')) return 'El correo electronico no es valido';
+        /*evaluar el minimo de caracteres*/
+        if (type === 'password' && value.length < 6) return 'La contraseña debe ser mas fuerte';
     }
     const error = getError();
     
