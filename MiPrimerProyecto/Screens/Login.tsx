@@ -2,15 +2,23 @@ import { View } from "react-native";
 import CustomInput from "../Componentes/CustomInput";
 import { useState } from "react";
 export default function Login() {
-const [email, setEmail] = useState('abraham@unitec.edu');
-
+const [email, setEmail] = useState('');
+const [password, setPassword] = useState('');
     return (
         <View>
             <CustomInput 
-                label={"Input de prueba"}
-                value={"Abraham"} 
-                onChange={()=>{}}
+                label="Correo electronico"
+                type="email"
+                value={email} 
+                onChange={setEmail}
                 required={false} />
+
+            <CustomInput 
+                label="Contraseña"
+                type="password"
+                value={password} 
+                onChange={setPassword}
+                required={true} />    
         </View>
     );
 }

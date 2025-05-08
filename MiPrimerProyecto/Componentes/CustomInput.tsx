@@ -22,7 +22,7 @@ export default function CustomInput({ label, value, type, onChange, required }: 
             <Text>{label}</Text>
             <TextInput
                 style={styles.input}
-                placeholder={"Placeholder"}
+                placeholder={"Escribe aqui"}
                 value = {value}
                 onChangeText={onChange}
                 secureTextEntry={isRequired}
