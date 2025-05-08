@@ -15,7 +15,10 @@ export default function CustomInput({ label, value, type, onChange, required }: 
         type === 'email' ? 'email-address' :
         type === 'number' ? 'numeric' : 'default';
     
-    
+    const getError = () => {
+        if (required && !value) return 'Este campo es requerido';
+    }
+    const error = getError();
     
     return(
         <View>
@@ -27,8 +30,9 @@ export default function CustomInput({ label, value, type, onChange, required }: 
                 onChangeText={onChange}
                 secureTextEntry={isRequired}
                 keyboardType ={keyboardType}
-
                 />
+
+                { <Text>{error} </Text>}
         </View>
     );
 }
