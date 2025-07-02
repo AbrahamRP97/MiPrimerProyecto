@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import CustomButton from "../Componentes/CustomButton";
 import { useAuth } from "../context/AuthContext";
 import { i18n, useLanguage } from "../context/LanguageContext";
+import { useTheme } from "react-native-elements";
 
 export default function Login({ navigation }: any) {
 const [email, setEmail] = useState('');
@@ -11,6 +12,8 @@ const [password, setPassword] = useState('');
 
 const {login, isAllowed} = useAuth();
 const {language} = useLanguage();
+const {theme} = useTheme();
+
 
 const handleLogin = () => {
     login(email);

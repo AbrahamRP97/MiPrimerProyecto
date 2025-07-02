@@ -1,12 +1,13 @@
-import { NavigationContainer } from '@react-navigation/native';
-import { StatusBar } from 'expo-status-bar';
+import { NavigationContainer, ThemeProvider } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { AuthProvider } from './context/AuthContext';
-import { StyleSheet, Text, View } from 'react-native';
 import Home from './Screens/Home';
 import Login from './Screens/Login';
 import TabsLayout from './Screens/Tabs/TabsLayout';
 import { LanguageProvider } from './context/LanguageContext';
+import Profile from './Screens/Tabs/Profile';
+import Settings from './Screens/Tabs/Settings';
+
 
 const Stack = createNativeStackNavigator();
 
@@ -18,7 +19,7 @@ export default function App() {
       <Stack.Navigator initialRouteName='Login'>
         <Stack.Screen name="Login" component={Login}/>
         <Stack.Screen name="Home" component={Home}/>
-        <Stack.Screen name="Tabs" component={TabsLayout}/>
+        <Stack.Screen name="Profile" component={Settings}/>
       </Stack.Navigator>
     </NavigationContainer>
     </LanguageProvider>
